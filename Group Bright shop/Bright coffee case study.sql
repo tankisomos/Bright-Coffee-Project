@@ -61,10 +61,9 @@ CASE
     Count(Distinct transaction_id) AS Total_Sales_per_time_bucket,
     Sum(transaction_qty * unit_price) AS Total_Revenue_per_time_bucket,
 
- ----Products Revenue Trend Over Time and Round Revenue to 2 decimal
+ ----Products Revenue Trend Over Time
 
      Date(transaction_date) AS Day,
-            Dayname(transaction_date) AS Day_Name,
             product_category,
             transaction_qty * unit_price AS Total_Product_Revenue_Overtime,
    
@@ -75,7 +74,7 @@ SUM(transaction_qty * unit_price) AS total_revenue_per_product_Type,
 
   Date(transaction_date) AS Day,
             Dayname(transaction_date) AS Day_Name,
-            Count (transaction_id) AS Total_Sales,
+            Count (transaction_id) AS Total_product_sales_overtime,
          
     
     ---Sales trends across products and time intervals
@@ -93,7 +92,7 @@ SUM(transaction_qty * unit_price) AS total_revenue_per_product_Type,
 ----A month of the year with highest and lowest sales and revenue
 
     MONTHNAME(transaction_date) AS Month_name,
-    Count(transaction_id) AS Total_Sales,
+    Count(transaction_id) AS Total_Sales_per_month,
     Cast(Sum (transaction_qty * unit_price)AS INT) AS Total_Revenue_Per_Month 
     
 FROM bright_coffee_shop_analysis
