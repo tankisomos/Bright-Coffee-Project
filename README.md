@@ -1,2 +1,2 @@
 # Bright-Coffee-Project
-analysing bright coffee data
+this project objective is to assist a new CEO to understand the perfomance of 3 coffee shops by analysing the sales records of the 3 shops...
